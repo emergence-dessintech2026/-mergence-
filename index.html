@@ -1,108 +1,272 @@
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>L'Émergence | Dessin technique</title>
+  <meta name="theme-color" content="#102c25">
+  <meta name="description" content="L’Émergence : apprends le dessin technique, développe tes compétences et révèle ton potentiel.">
+  <title>L’Émergence | Dessin technique</title>
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:Arial,sans-serif;background:#0b1120;color:#f5f7ff;line-height:1.7}
-    header{background:#111b30;padding:20px;text-align:center;border-bottom:2px solid #e8a93b}
-    header h1{color:#f4b942;font-size:30px}
-    header p{color:#d4d9e5}
-    nav{display:flex;justify-content:center;flex-wrap:wrap;gap:15px;padding:15px;background:#17243b}
-    nav a{color:white;text-decoration:none;font-weight:bold}
-    nav a:hover{color:#f4b942}
-    .hero{text-align:center;padding:70px 20px;background:linear-gradient(135deg,#111b30,#263b5b)}
-    .hero h2{font-size:34px;color:#f4b942;margin-bottom:15px}
-    .hero p{max-width:650px;margin:0 auto 25px}
-    .btn{display:inline-block;background:#f4b942;color:#101827;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:bold;margin:5px}
-    section{padding:45px 20px;max-width:1000px;margin:auto}
-    section h2{color:#f4b942;margin-bottom:18px;font-size:27px}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:20px}
-    .card{background:#17243b;border:1px solid #30415e;padding:22px;border-radius:12px}
-    .card h3{color:#f4b942;margin-bottom:10px}
-    .price{font-size:25px;font-weight:bold;color:#f4b942;margin:10px 0}
-    form{background:#17243b;padding:22px;border-radius:12px;margin-top:20px}
-    label{display:block;margin:12px 0 5px}
-    input,select,textarea{width:100%;padding:12px;border-radius:6px;border:1px solid #52627c;background:#0b1120;color:white;font-size:16px}
-    button{width:100%;border:none;cursor:pointer;font-size:16px;margin-top:18px}
-    .contact{text-align:center;background:#111b30;padding:35px 20px}
-    footer{text-align:center;padding:20px;color:#c4cada;font-size:14px}
+    :root {
+      --vert: #102c25;
+      --vert-clair: #1e493b;
+      --or: #e9b957;
+      --creme: #faf7ef;
+      --texte: #25342e;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--texte);
+      background: var(--creme);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; }
+    .entete {
+      background: var(--vert);
+      color: white;
+      padding: 18px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .logo { font-size: 21px; font-weight: 800; }
+    .logo span { color: var(--or); }
+    nav { display: flex; gap: 16px; flex-wrap: wrap; }
+    nav a { color: white; font-size: 14px; }
+    .hero {
+      background: linear-gradient(135deg, #102c25, #245441);
+      color: white;
+      padding: 76px 7% 84px;
+      text-align: center;
+    }
+    .etiquette {
+      color: var(--or);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+      font-size: 12px;
+    }
+    h1 { font-size: clamp(36px, 7vw, 62px); line-height: 1.1; margin: 18px auto; max-width: 800px; }
+    .hero p { max-width: 660px; margin: 20px auto; color: #e5eee8; font-size: 18px; }
+    .boutons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: center;
+      border: 0;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    .btn-or { background: var(--or); color: #19271f; }
+    .btn-clair { border: 1px solid white; color: white; }
+    section { padding: 58px 7%; }
+    .titre { text-align: center; max-width: 720px; margin: 0 auto 32px; }
+    .titre h2 { color: var(--vert); font-size: clamp(27px, 4vw, 38px); margin: 0 0 10px; }
+    .grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; max-width: 1100px; margin: auto; }
+    .carte {
+      background: white;
+      border: 1px solid #e8e5db;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 6px 22px #172e2010;
+    }
+    .icone { font-size: 30px; }
+    .carte h3 { color: var(--vert); margin: 10px 0; }
+    .vision { background: #eee9dc; }
+    .vision-interieur { max-width: 850px; text-align: center; margin: auto; }
+    .vision-interieur p { font-size: 17px; }
+    .tarif { text-align: center; }
+    .prix { color: var(--vert); font-size: 32px; font-weight: 800; margin: 12px 0; }
+    .duree { color: #64736a; }
+    .inscription { background: #e9eee7; }
+    form { max-width: 650px; margin: auto; background: white; padding: 25px; border-radius: 14px; }
+    label { display: block; font-weight: bold; margin: 14px 0 6px; }
+    input, select, textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #cbd5cb;
+      border-radius: 7px;
+      font: inherit;
+      background: white;
+    }
+    textarea { min-height: 95px; resize: vertical; }
+    .envoyer { width: 100%; margin-top: 20px; background: #16834a; color: white; }
+    .note { font-size: 13px; color: #5e6b61; }
+    footer { background: var(--vert); color: white; text-align: center; padding: 28px 7%; }
+    footer p { margin: 6px; }
+    .whatsapp { color: #bce8c9; font-weight: bold; }
+    @media (max-width: 560px) {
+      .entete { justify-content: center; text-align: center; }
+      nav { justify-content: center; gap: 12px; }
+      .hero { padding: 55px 6%; }
+      section { padding: 44px 6%; }
+      form { padding: 19px; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>L'Émergence</h1>
-    <p>Communauté de dessin technique et de créativité</p>
+  <header class="entete">
+    <div class="logo">L’<span>ÉMERGENCE</span></div>
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#formations">Formations</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#inscription">Inscription</a>
+    </nav>
   </header>
-  <nav>
-    <a href="#accueil">Accueil</a><a href="#vision">Notre vision</a><a href="#formations">Formations</a><a href="#tarifs">Tarifs</a><a href="#inscription">Inscription</a>
-  </nav>
-  <div class="hero" id="accueil">
-    <h2>Réveille ce qui sommeille en toi</h2>
-    <p>Développe tes compétences en dessin technique, découvre ton potentiel et transforme tes idées en réalisations concrètes avec L'Émergence.</p>
-    <a class="btn" href="#formations">Découvrir nos formations</a>
-    <a class="btn" href="#inscription">Nous rejoindre</a>
-  </div>
-  <section id="vision">
-    <h2>Notre vision</h2>
-    <p>L'Émergence est une communauté qui encourage l'apprentissage, la créativité et le développement des compétences en dessin technique. Notre ambition est d'aider chaque membre à progresser, à gagner en confiance et à donner vie à ses idées.</p>
-  </section>
-  <section id="competences">
-    <h2>Les compétences que tu peux développer</h2>
-    <div class="cards">
-      <div class="card"><h3>📐 Dessin technique</h3><p>Comprendre les bases, les tracés, les mesures et la représentation des objets.</p></div>
-      <div class="card"><h3>✏️ Pratique et précision</h3><p>Améliorer ta méthode de travail, ta précision et ta capacité à réaliser des dessins.</p></div>
-      <div class="card"><h3>💡 Créativité</h3><p>Apprendre à développer tes idées et à résoudre des problèmes par le dessin.</p></div>
-    </div>
-  </section>
-  <section id="formations">
-    <h2>Nos activités</h2>
-    <div class="cards">
-      <div class="card"><h3>Coaching</h3><p>Un accompagnement pour t'aider à progresser et à travailler sur tes difficultés.</p></div>
-      <div class="card"><h3>Masterclasses</h3><p>Des séances d'apprentissage pour approfondir tes connaissances et découvrir de nouvelles méthodes.</p></div>
-      <div class="card"><h3>Communauté WhatsApp</h3><p>Un espace pour échanger, poser des questions et apprendre avec les autres membres.</p></div>
-    </div>
-  </section>
-  <section id="tarifs">
-    <h2>Nos formules</h2>
-    <div class="cards">
-      <div class="card"><h3>Formule 4 mois</h3><p class="price">2 500 FCFA</p><p>Un parcours pour commencer à développer tes compétences.</p><a class="btn" href="#inscription">Choisir cette formule</a></div>
-      <div class="card"><h3>Formule 9 mois</h3><p class="price">4 000 FCFA</p><p>Un parcours plus long pour apprendre et progresser dans la durée.</p><a class="btn" href="#inscription">Choisir cette formule</a></div>
-    </div>
-  </section>
-  <section id="inscription">
-    <h2>Rejoins L'Émergence</h2>
-    <p>Remplis ce formulaire. WhatsApp s'ouvrira avec ton message d'inscription prêt à être envoyé.</p>
-    <form id="inscriptionForm">
-      <label for="nom">Ton nom complet</label><input id="nom" type="text" placeholder="Ex. : Kossi Mensah" required>
-      <label for="telephone">Ton numéro de téléphone</label><input id="telephone" type="tel" placeholder="Ton numéro" required>
-      <label for="formule">Choisis ta formule</label>
-      <select id="formule" required><option value="">-- Sélectionne une formule --</option><option value="4 mois - 2 500 FCFA">4 mois - 2 500 FCFA</option><option value="9 mois - 4 000 FCFA">9 mois - 4 000 FCFA</option></select>
-      <label for="motivation">Pourquoi veux-tu nous rejoindre ?</label><textarea id="motivation" rows="4" placeholder="Écris quelques mots..."></textarea>
-      <button class="btn" type="submit">Envoyer mon inscription sur WhatsApp</button>
-    </form>
-  </section>
-  <div class="contact">
-    <h2>Prêt à émerger ?</h2><p>Fais le premier pas et commence ton parcours avec nous.</p>
-    <a class="btn" href="https://wa.me/22892729195" target="_blank" rel="noopener">Contacter L'Émergence sur WhatsApp</a>
-  </div>
-  <footer><p>© 2026 L'Émergence — Apprendre, créer et progresser.</p></footer>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="etiquette">Communauté de formation et de progression</div>
+      <h1>Réveille ce qui sommeille en toi.</h1>
+      <p>
+        Découvre le dessin technique, développe tes compétences et transforme
+        ton potentiel en savoir-faire grâce à L’Émergence.
+      </p>
+      <div class="boutons">
+        <a class="btn btn-or" href="#inscription">Rejoindre la communauté</a>
+        <a class="btn btn-clair" href="#formations">Découvrir les formations</a>
+      </div>
+    </section>
+
+    <section id="formations">
+      <div class="titre">
+        <h2>Fais émerger ton talent</h2>
+        <p>Apprends, pratique et progresse avec une communauté qui t’encourage.</p>
+      </div>
+      <div class="grille">
+        <article class="carte">
+          <div class="icone">📐</div>
+          <h3>Dessin technique</h3>
+          <p>Développe tes bases, apprends à lire et à réaliser des dessins techniques avec méthode.</p>
+        </article>
+        <article class="carte">
+          <div class="icone">🎯</div>
+          <h3>Coaching</h3>
+          <p>Progresse avec des conseils pratiques, des objectifs clairs et un accompagnement motivant.</p>
+        </article>
+        <article class="carte">
+          <div class="icone">🎓</div>
+          <h3>Masterclasses</h3>
+          <p>Approfondis tes connaissances et découvre de nouvelles méthodes pour améliorer ton travail.</p>
+        </article>
+        <article class="carte">
+          <div class="icone">🤝</div>
+          <h3>Communauté WhatsApp</h3>
+          <p>Échange avec les autres membres, pose tes questions et avance dans un esprit d’entraide.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="vision">
+      <div class="vision-interieur">
+        <div class="etiquette">Notre vision</div>
+        <h2>Le potentiel existe en chacun de nous.</h2>
+        <p>
+          L’Émergence veut aider chacun à découvrir ses capacités, à acquérir
+          des compétences utiles et à oser aller plus loin. Nous croyons en
+          l’apprentissage, la discipline, le partage et la progression.
+        </p>
+        <p><strong>Notre mission : apprendre ensemble, grandir ensemble et réussir ensemble.</strong></p>
+      </div>
+    </section>
+
+    <section id="tarifs">
+      <div class="titre">
+        <h2>Choisis ta formule</h2>
+        <p>Choisis la durée qui te convient et contacte-nous pour les modalités d’inscription.</p>
+      </div>
+      <div class="grille">
+        <article class="carte tarif">
+          <h3>Formule Essentielle</h3>
+          <div class="prix">2 500 FCFA</div>
+          <p class="duree">Accès de 4 mois</p>
+          <p>Pour commencer ton parcours et développer tes compétences.</p>
+          <a class="btn btn-or" href="#inscription" onclick="choisirFormule('4 mois - 2 500 FCFA')">Choisir cette formule</a>
+        </article>
+        <article class="carte tarif">
+          <h3>Formule Évolution</h3>
+          <div class="prix">4 000 FCFA</div>
+          <p class="duree">Accès de 9 mois</p>
+          <p>Pour avancer sur une plus longue durée et consolider tes acquis.</p>
+          <a class="btn btn-or" href="#inscription" onclick="choisirFormule('9 mois - 4 000 FCFA')">Choisir cette formule</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="inscription" id="inscription">
+      <div class="titre">
+        <h2>Prêt à nous rejoindre ?</h2>
+        <p>Remplis ce formulaire. WhatsApp s’ouvrira avec un message préparé pour nous contacter.</p>
+      </div>
+      <form id="formulaire">
+        <label for="nom">Ton nom complet</label>
+        <input id="nom" name="nom" type="text" placeholder="Ex. : Kossi Mensah" required>
+
+        <label for="telephone">Ton numéro de téléphone</label>
+        <input id="telephone" name="telephone" type="tel" placeholder="Ton numéro WhatsApp" required>
+
+        <label for="formule">La formule choisie</label>
+        <select id="formule" name="formule" required>
+          <option value="">-- Choisir une formule --</option>
+          <option value="4 mois - 2 500 FCFA">4 mois - 2 500 FCFA</option>
+          <option value="9 mois - 4 000 FCFA">9 mois - 4 000 FCFA</option>
+        </select>
+
+        <label for="objectif">Que souhaites-tu apprendre ?</label>
+        <textarea id="objectif" name="objectif" placeholder="Parle-nous de ton objectif (facultatif)"></textarea>
+
+        <button class="btn envoyer" type="submit">Envoyer ma demande sur WhatsApp</button>
+        <p class="note">Ce formulaire prépare un message WhatsApp. Il ne réalise aucun paiement et ne transmet pas les informations avant que tu confirmes l’envoi dans WhatsApp.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>L’ÉMERGENCE</strong></p>
+    <p>Réveille ce qui sommeille en toi.</p>
+    <p>Apprendre • Pratiquer • Évoluer</p>
+    <p><a class="whatsapp" href="https://wa.me/22892729195" target="_blank" rel="noopener">Nous contacter sur WhatsApp</a></p>
+    <p>© <span id="annee"></span> L’Émergence. Tous droits réservés.</p>
+  </footer>
+
   <script>
-    document.getElementById("inscriptionForm").addEventListener("submit", function(event) {
-      event.preventDefault();
+    function choisirFormule(formule) {
+      document.getElementById("formule").value = formule;
+    }
+
+    document.getElementById("annee").textContent = new Date().getFullYear();
+
+    document.getElementById("formulaire").addEventListener("submit", function(e) {
+      e.preventDefault();
+
       const nom = document.getElementById("nom").value.trim();
       const telephone = document.getElementById("telephone").value.trim();
       const formule = document.getElementById("formule").value;
-      const motivation = document.getElementById("motivation").value.trim();
-      const message = "Bonjour L'Émergence ! Je souhaite m'inscrire.\n\n" +
-        "Nom : " + nom + "\n" + "Téléphone : " + telephone + "\n" +
-        "Formule choisie : " + formule + "\n" +
-        "Motivation : " + (motivation || "Non précisée");
-      window.open("https://wa.me/22892729195?text=" + encodeURIComponent(message), "_blank");
+      const objectif = document.getElementById("objectif").value.trim();
+
+      const message =
+        "Bonjour L’Émergence ! Je souhaite m'inscrire.%0A".replace("%0A", "\n") +
+        "Nom : " + nom + "\n" +
+        "Mon téléphone : " + telephone + "\n" +
+        "Formule : " + formule + "\n" +
+        "Mon objectif : " + (objectif || "À discuter");
+
+      window.open(
+        "https://wa.me/22892729195?text=" + encodeURIComponent(message),
+        "_blank"
+      );
     });
   </script>
 </body>
-</html>
+        </html>
+        
